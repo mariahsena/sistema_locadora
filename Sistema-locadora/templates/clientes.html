@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Cadastrados</title>
+</head>
+<body>
+    <h1>Clientes Cadastrados</h1>
+    <table border="1">
+        <tr>
+            <th>Código</th>
+            <th>RG</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Data Nascimento</th>
+            <th>Estado Civil</th>
+        </tr>
+
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.COD_CLIENTES }}</td>
+            <td>{{ cliente.RG }}</td>
+            <td>{{ cliente.NOME }}</td>
+            <td>{{ cliente.ENDERECO }}</td>
+            <td>{{ cliente.BAIRRO }}</td>
+            <td>{{ cliente.CIDADE }}</td>
+            <td>{{ cliente.ESTADO }}</td>
+            <td>{{ cliente.TELEFONE }}</td>
+            <td>{{ cliente.EMAIL }}</td>
+            <td>{{ cliente.DATA_NASCIMENTO }}</td>
+            <td>{{ cliente.ESTADO_CIVIL }}</td>
+        </tr> {% else %} <tr>
+            <td colspan="3">Nenhum cliente cadastrado.</td>
+        </tr> {% endfor %}
+    </table>
+</body>
+</html>
